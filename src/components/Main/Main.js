@@ -5,8 +5,8 @@ import AppBar from 'material-ui/AppBar';
 const Main = props => (
   <div>
     <AppBar
-      title="Github Finder"
-      showMenuIconButton={false}
+      title="Github to Find users"
+      showMenuIconButton={true}
     />
     <div>
       {props.children}

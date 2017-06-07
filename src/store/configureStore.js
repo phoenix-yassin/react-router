@@ -9,5 +9,6 @@ const initialState = Immutable.Map();
 export default createStore(
   rootReducer,
   initialState,
+  // Transform state before print. Eg. convert Immutable object to plain JSON.
   applyMiddleware(reduxThunk, createLogger({ stateTransformer: state => state.toJS() }))
 );
