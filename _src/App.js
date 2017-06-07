@@ -5,12 +5,12 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 const Home = ()=>(
   <div>
-    <h2>Home</h2>
+    <h2>Home1</h2>
   </div>
 )
 const About = ()=>(
   <div>
-    <h2>About</h2>
+    <h2>About1</h2>
   </div>
 )
 
@@ -26,8 +26,8 @@ const CustomLink = ({to,label,isExact})=>(
 const App = () => (
   <Router>
     <div>
-      <CustomLink to="/" isExact={true} label="Home"/>
-      <CustomLink to="/about" label="About"/>
+      <CustomLink to="/" isExact={true} label="Home1"/>
+      <CustomLink to="/about" label="About1"/>
       <hr/>
       <Route exact path="/" component={Home}/>
       <Route path="/ABOUT" component={About}/>
