@@ -1,6 +1,4 @@
 /* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style,linebreak-style
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -19,16 +17,14 @@ injectTapEventPlugin();
 
 ReactDOM.render(
   <Provider store={store}>
-    <MuiThemeProvider>
-      <Router>
-        <div>
-          <Route path="/" component={Main} />
-          <Route path="/" component={HomePageContainer} />
-          <Route path="/result" component={ResultPageContainer} />
-        </div>
-      </Router>
-    </MuiThemeProvider>
-
-  </Provider>,
-  document.getElementById('app')
+      <MuiThemeProvider>
+          <Router>
+              <div>
+                  <Route path="/" component={Main} />
+                  <Route path="/" component={HomePageContainer} />
+                  <Route path="/result" component={ResultPageContainer} />
+              </div>
+          </Router>
+      </MuiThemeProvider>
+  </Provider>
 );
