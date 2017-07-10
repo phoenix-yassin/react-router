@@ -15,8 +15,6 @@ export const getGithub = (userId = 'funchal') => (
   (dispatch) => {
     dispatch({ type: GET_GITHUB_INITIATE });
     dispatch(showSpinner());
-    debugger;
-   // userId = userId ? 'funchal' : userId;
     fetch(`https://api.github.com/users/${userId}`)
       .then(res =>{
       	if(res.ok){
@@ -30,24 +28,10 @@ export const getGithub = (userId = 'funchal') => (
       })
       .catch((e) => {
 	      dispatch({type: GET_GITHUB_FAIL});
+	      dispatch(hideSpinner());
 	      console.log(e)
       });
   }
 );
-/*
-fetch(`https://api.github.com/users/${userId}`)
-	.then(response =>{ return response.json();} )
-	.then((json) => {
-		if(json.OK) {
-			dispatch({ type: GET_GITHUB_SUCCESS, payload: { data: json } });
-			dispatch(hideSpinner());
-		}else{
-			throw new Error('response false...');
-		}
-	})
-	.catch(() => {
-		dispatch(hideSpinner());
-		dispatch({ type: GET_GITHUB_FAIL });
-	}*/
 
 export const changeUserId = text => ({ type: CHAGE_USER_ID, payload: { userId: text } });
