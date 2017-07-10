@@ -7,22 +7,22 @@ import {
 } from '../../actions';
 
 export default connect(
-  state => ({
-    userId: state.getIn(['github', 'userId']),
-  }),
+  state =>({
+     userId: state.getIn(['github','userId']),
+    }),
   dispatch => ({
-    onChangeUserId: event => (
-      dispatch(changeUserId(event.target.value))
+    onChangeUserId: (eve)=>(
+      dispatch(changeUserId(eve.target.value))
     ),
-    onSubmitUserId: userId => () => (
+    onSubmitUserId: (userId) => () => (
       dispatch(getGithub(userId))
     ),
   }),
-  (stateProps, dispatchProps, ownProps) => {
+  (stateProps, dispatchProps, ownProps)=>{
     const { userId } = stateProps;
     const { onSubmitUserId } = dispatchProps;
     return Object.assign({}, stateProps, dispatchProps, ownProps, {
-      onSubmitUserId: onSubmitUserId(userId),
-    });
+      onSubmitUserId: onSubmitUserId(userId)
+    })
   }
-)(HomePage);
+)(HomePage)

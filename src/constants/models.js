@@ -5,7 +5,7 @@ export const UiState = Immutable.fromJS({
 })
 
 export const GithubState = Immutable.fromJS({
-    userId:'',
+    userId: '',
     date:{}
 })
 

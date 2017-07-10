@@ -5,10 +5,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
 const HomePage = ({
-  userId,
-  onSubmitUserId,
-  onChangeUserId,
-}) => (
+                    userId,
+                    onSubmitUserId,
+                    onChangeUserId,
+                  }) => (
   <div>
     <TextField
       hintText="Please Key in your Github User Id."
